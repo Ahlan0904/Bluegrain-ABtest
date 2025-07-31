@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluegrain in your life - 라이프스타일 강조</title>
+    <link rel="stylesheet" href="src/style_B.css">
+    <script type="module" src="src/script_B.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div style="text-align: center; padding: 10px 0;">
+                <img src="public/bluegrain_logo_20250724.png" alt="Bluegrain Logo" style="max-width: 150px; height: auto;">
+            </div>
+            <nav style="display:flex; justify-content:space-between; align-items:center; padding:0 0 0 0; border-bottom:1px solid #e3eaf5; background:linear-gradient(90deg,#f7f8fa 0%,#e3f0ff 100%); min-height:56px;">
+              <div style="display:flex; align-items:center; gap:28px; margin-left:32px; font-family:'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif;">
+                <a href="#" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;">카테고리</a>
+                <a href="#" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;" id="shopNavBtn">SHOP</a>
+                <a href="src/story_B.html" id="storyBtn" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;">스토리</a>
+                <a href="src/board.html" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;" id="boardTab">게시판</a>
+              </div>
+              <div style="display:flex; align-items:center; gap:22px; position:relative; margin-right:32px; font-family:'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif;">
+                <div style="display:inline-block; position:relative;">
+                  <a href="#" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500;">로그인</a>
+                  <span class="coupon-bubble" style="position:absolute; left:50%; transform:translateX(-50%); top:100%; margin-top:2px; background:#222; color:#fff; border-radius:12px; padding:4px 14px; font-size:0.98em; font-weight:500; white-space:nowrap; box-shadow:0 2px 8px rgba(0,0,0,0.10);">1초 가입 4,000원</span>
+                </div>
+                <a href="#" id="mypageBtn" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500;">마이페이지</a>
+                <a href="src/cart.html" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500;">장바구니(0)</a>
+                <a href="#" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; margin-right:2px;">SEARCH</a>
+              </div>
+            </nav>
+
+        <!-- 상품별 카테고리 섹션 (네비게이션 바로 아래에 표시) -->
+        <section id="shopCategorySection" style="display:none; text-align:center; margin:0 0 32px 0; position:relative; z-index:100;">
+          <div style="max-width:600px; margin:0 auto; background:#f7f8fa; border-radius:14px; box-shadow:0 2px 16px rgba(0,0,0,0.07); padding:32px 18px;">
+            <h2 style="font-size:1.5em; color:#007bff; font-weight:700; margin-bottom:18px;">상품별 카테고리</h2>
+            <div style="display:flex; flex-wrap:wrap; gap:18px; justify-content:center;">
+              <a href="src/sportsbra.html" id="sportsBraBtn" style="background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:14px 28px; font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:background 0.2s;">스포츠브라</a>
+              <a href="src/apparel.html" style="background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:14px 28px; font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:background 0.2s;">어패럴</a>
+              <a href="src/mens.html" style="background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:14px 28px; font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:background 0.2s;">맨즈</a>
+              <a href="src/sale.html" style="background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:14px 28px; font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:background 0.2s;">SALE</a>
+              <a href="src/etc.html" style="background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:14px 28px; font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:background 0.2s;">기타</a>
+            </div>
+            <!-- 스포츠브라 이미지 갤러리 -->
+          </div>
+        </section>
+        <style>
+          #shopCategorySection.slide-in {
+            animation: shopSlideIn 0.45s cubic-bezier(.77,.2,.32,1.01);
+            display: block !important;
+          }
+          @keyframes shopSlideIn {
+            0% { opacity: 0; transform: translateY(-40px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+        </style>
+        <script>
+          const shopBtn = document.getElementById('shopNavBtn');
+          const shopSection = document.getElementById('shopCategorySection');
+          shopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            shopSection.classList.add('slide-in');
+            shopSection.style.display = 'block';
+          });
+          document.addEventListener('click', function(e) {
+            if (!shopSection.contains(e.target) && e.target !== shopBtn) {
+              shopSection.classList.remove('slide-in');
+              shopSection.style.display = 'none';
+            }
+          });
+        </script>
+        </header>
+
+        <section class="hero">
+            <h1>Bluegrain in your life</h1>
+            <p>운동을 넘어, 당신의 모든 순간에 함께하는 블루그레인. 편안함과 스타일을 동시에.</p>
+        </section>
+
+
+        <section class="lifestyle-gallery">
+            <div class="lifestyle-item">
+                <img src="public/bluegrain_daily.jpg" alt="카페에서 블루그레인">
+                <h2>일상 속 편안함</h2>
+                <p>카페에서 친구들과의 여유로운 시간, 블루그레인과 함께라면 더욱 편안하고 스타일리시합니다.</p>
+            </div>
+            <div class="lifestyle-item">
+                <img src="public/bluegrain_yoga.jpg" alt="요가 수련 중 블루그레인">
+                <h2>요가 수련의 완벽한 파트너</h2>
+                <p>유연한 움직임과 깊은 호흡, 블루그레인과 함께라면 요가 수련에 더욱 집중할 수 있습니다. 편안함과 지지력을 동시에 경험하세요.</p>
+            </div>
+            <div class="lifestyle-item">
+                <img src="public/bluegrain_camping.jpg" alt="여행 중 블루그레인">
+                <h2>여행의 동반자</h2>
+                <p>새로운 곳을 탐험하는 여행길, 활동성과 편안함을 동시에 제공하는 블루그레인과 함께하세요.</p>
+            </div>
+        </section>
+
+        <section class="cta">
+            <a href="https://bluegrain.kr/product/c_light_bra.html?cate_no=44">블루그레인 라이프스타일 컬렉션 보기</a>
+        </section>
+
+        <footer>
+            <!-- 푸터는 기존 사이트와 동일하게 유지 -->
+        <footer>
+            <!-- 푸터는 기존 사이트와 동일하게 유지 -->
+        </footer>
+        </p>
+      </div>
+    </div>
+    <div id="categorySidebar" style="display:none; position:fixed; top:0; left:0; width:260px; height:100vh; background:#fff; z-index:1100; box-shadow:2px 0 10px rgba(0,0,0,0.1); padding:20px 15px; overflow-y:auto;">
+      <button id="categoryClose" style="background:none; border:none; font-size:1.5em; cursor:pointer; margin-bottom:20px;">&times;</button>
+      <nav style="display:block;">
+        <a href="#" style="font-weight:bold; font-size:1.2em; margin-bottom:15px; display:block;">SHOP</a>
+        <a href="#" style="display:block; margin-bottom:10px;">스토리</a>
+        <a href="#" style="display:block; margin-bottom:10px;">블루그레인</a>
+        <a href="#" style="display:block; margin-bottom:10px;">게시판</a>
+        <a href="#" style="display:block; margin-bottom:10px;">스포츠브라 왜 입어야해?</a>
+        <a href="#" style="display:block; margin-bottom:10px;">스포츠브라 선택 가이드</a>
+        <a href="#" style="display:block; margin-bottom:10px;">내 가슴사이즈는?</a>
+        <hr>
+        <a href="#" style="display:inline-block; margin-right:10px;">로그인</a>
+        <a href="mypage.html" style="display:inline-block; margin-right:10px;">마이페이지</a>
+        <a href="#" style="display:block; margin-top:10px;">강사회원신청게시판</a>
+        <a href="#" style="display:block;">파트너센터 신청</a>
+        <hr>
+        <a href="#" style="display:inline-block; margin-top:10px; font-size:1.3em;">&#x1F517;</a>
+        <div style="margin-top:20px; font-size:0.9em; color:#888;">© 블루그레인</div>
+      </nav>
+    </div>
+        </footer>
+
+    <!-- 검색 모달 -->
+    <div id="searchModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; justify-content:center; align-items:center;">
+      <div style="background:#fff; padding:30px 20px; border-radius:10px; min-width:300px; max-width:90vw; box-shadow:0 2px 10px rgba(0,0,0,0.2); position:relative; display:flex; flex-direction:column; align-items:center;">
+        <button id="searchClose" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5em; cursor:pointer;">&times;</button>
+        <h2 style="margin-top:0; align-self:flex-start;">검색</h2>
+        <input type="text" id="searchInput" style="width:100%; max-width:260px; box-sizing:border-box; padding:10px; font-size:1em; margin-bottom:15px;" placeholder="검색어를 입력하세요">
+        <button id="searchSubmit" style="background:#007bff; color:#fff; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; width:100%; max-width:260px;">검색</button>
+      </div>
+    </div>
+        </footer>
+    </div>
+    <script type="module" src="src/script_B.js"></script>
+</body>
+</html>

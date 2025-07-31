@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluegrain Sports Story</title>
+  <link rel="stylesheet" href="../style_B.css">
+  <style>
+    body { background: #f7f8fa; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 32px;
+      padding: 40px 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .story-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+    }
+    .story-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+    }
+    .story-card .story-content {
+      padding: 18px 16px 12px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .story-title {
+      font-size: 1.15em;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    .story-desc {
+      font-size: 0.98em;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .story-date {
+      font-size: 0.85em;
+      color: #888;
+      margin-top: 6px;
+    }
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header style="text-align:center; padding:24px 0 10px 0;">
+    <h1 style="font-size:2em; color:#007bff; font-weight:700; margin-bottom:8px;">Bluegrain Sports Story</h1>
+    <p style="color:#555; font-size:1.1em;">블루그레인과 함께하는 다양한 스포츠, 라이프스타일, 전문가 이야기</p>
+  </header>
+  <main>
+    <div class="story-grid">
+      <div class="story-card">
+        <img src="../public/sports_story_1.jpg" alt="스포츠 스토리1">
+        <div class="story-content">
+          <div>
+            <div class="story-title">[2025 #5] 우당탕탕 홈러가는 스브단의 5일!</div>
+            <div class="story-desc">안녕하세요! 블루그레인 브랜드레터가 돌아왔습니다! 홈운동! 컨텐츠 맛있던 5일! 파트별 리뷰는 각 기획에 넣는 하루가 있길 바래요! 찐성인의 홈러가 5분, 스브단도 또 채웠다.</div>
+          </div>
+          <div class="story-date">Posted 25.06.04</div>
+        </div>
+      </div>
+      <div class="story-card">
+        <img src="../public/sprots_story_2.jpg" alt="스포츠 스토리2">
+        <div class="story-content">
+          <div>
+            <div class="story-title">[2025 #4] 블루그레인 추구미-근육량 30kg 공주들의 운동 Party</div>
+            <div class="story-desc">안녕하세요! 블루그레인 브랜드레터가 돌아왔습니다! 아이유 닮은 4쌍? 매번 시간이 점점 빨라지는 기분? 블루그레인과 함께 한 운동! 운동도 하고, 대회도 참여하고, 행복..</div>
+          </div>
+          <div class="story-date">Posted 25.04.29</div>
+        </div>
+      </div>
+      <div class="story-card">
+        <img src="../public/화면 캡처 2025-07-24 115536.jpg" alt="스포츠 스토리3">
+        <div class="story-content">
+          <div>
+            <div class="story-title">[2025 #3] 크로스핏 코치는 하루에 얼마나 운동할까?</div>
+            <div class="story-desc">안녕하세요! 블루그레인 브랜드레터가 돌아왔습니다! 크로스핏 매장도! 찐 코칭! 운동하기 좋은 체험이 오고 있어요. 가족 현지인의 운동라이프에 들어가 F45를 통해 운동하는데...</div>
+          </div>
+          <div class="story-date">Posted 25.04.03</div>
+        </div>
+      </div>
+      <div class="story-card">
+        <img src="../public/화면 캡처 2025-07-24 121208.jpg" alt="스포츠 스토리4">
+        <div class="story-content">
+          <div>
+            <div class="story-title">[2025 #2] 크로스핏 1일 차, 찐 후기 들려드립니다</div>
+            <div class="story-desc">안녕하세요! 블루그레인 브랜드레터가 돌아왔습니다! 크로스핏이라는 많은 운동 관련 콘텐츠를 진행했는데요! 앞으로 있을 대회 스포츠와, 대표님의 첫 크로스핏 도전기까지! 단독...</div>
+          </div>
+          <div class="story-date">Posted 25.02.28</div>
+        </div>
+      </div>
+      <div class="story-card">
+        <img src="../public/화면 캡처 2025-07-24 121325.jpg" alt="스포츠 스토리5">
+        <div class="story-content">
+          <div>
+            <div class="story-title">[2025 #1] 2025년에는 유튜브에서 만나요!</div>
+            <div class="story-desc">안녕하세요! 블루그레인 브랜드레터가 돌아왔습니다! 유튜브 채널 및 관리리포팅 팀원과 실제 현장! 지난번부터 블루그레인의 유튜브 채널 통해 생생한 소통을 통해 응원합니다!</div>
+          </div>
+          <div class="story-date">Posted 25.01.31</div>
+        </div>
+      </div>
+      <div class="story-card">
+        <img src="../public/화면 캡처 2025-07-24 121630.jpg" alt="스포츠 스토리6">
+        <div class="story-content">
+          <div>
+            <div class="story-title">[2024 #20] 블루레터는 이제 떠나요…!</div>
+            <div class="story-desc">안녕하세요! 블루그레인 브랜드레터가 돌아왔습니다! 지난 1월이었어요! 2023년 1월이었어요! 2년이 지났는데...</div>
+          </div>
+          <div class="story-date">Posted 24.12.05</div>
+        </div>
+      </div>
+      <div class="story-card">
+        <img src="../public/화면 캡처 2025-07-24 124238.jpg" alt="스포츠 스토리7">
+        <div class="story-content">
+          <div>
+            <div class="story-title">[2024 #19] 블루그레인의 목표는 ‘실버버튼’입니다!</div>
+            <div class="story-desc">안녕하세요! 블루그레인 브랜드레터가 돌아왔습니다! 유튜브 채널 11만이었어요! 지난번부터 블루그레인의 유튜브 채널 통해 생생한 소통을 통해 응원합니다!</div>
+          </div>
+          <div class="story-date">Posted 24.11.01</div>
+        </div>
+      </div>
+      <div class="story-card">
+        <img src="../public/화면 캡처 2025-07-24 115334.jpg" alt="스포츠 스토리8">
+        <div class="story-content">
+          <div>
+            <div class="story-title">[2024 #18] 나야, 잘만브라. 가을 뉴컬러 출시!</div>
+            <div class="story-desc">안녕하세요! 블루그레인 브랜드레터가 돌아왔습니다! 가을 뉴컬러와 함께하는 블루그레인! 다양한 스포츠와 라이프스타일을 경험하세요!</div>
+          </div>
+          <div class="story-date">Posted 24.11.01</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

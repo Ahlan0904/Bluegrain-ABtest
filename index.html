@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluegrain A/B Test</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const randomNumber = Math.random();
+            if (randomNumber < 0.5) {
+                window.location.replace('index_A.html');
+            } else {
+                window.location.replace('index_B.html');
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>A/B 테스트 페이지로 리디렉션 중입니다...</p>
+</body>
+</html>
+
