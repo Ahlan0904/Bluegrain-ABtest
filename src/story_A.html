@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bluegrain Sports Story</title>
-  <link rel="stylesheet" href="style_A.css">
+  <link rel="stylesheet" href="common.css">
   <style>
     body { background: #f7f8fa; }
     .story-grid {
@@ -60,10 +60,11 @@
   </style>
 </head>
 <body>
-  <header style="text-align:center; padding:24px 0 10px 0;">
+  <div id="header-placeholder"></div>
+  <div class="product-page-title">
     <h1 style="font-size:2em; color:#007bff; font-weight:700; margin-bottom:8px;">Bluegrain Sports Story</h1>
     <p style="color:#555; font-size:1.1em;">블루그레인과 함께하는 다양한 스포츠, 라이프스타일, 전문가 이야기</p>
-  </header>
+  </div>
   <main>
     <div class="story-grid">
       <div class="story-card">
@@ -77,7 +78,7 @@
         </div>
       </div>
       <div class="story-card">
-        <img src="../public/sprots_story_2.jpg" alt="스포츠 스토리2">
+        <img src="../public/sports_story_2.jpg" alt="스포츠 스토리2">
         <div class="story-content">
           <div>
             <div class="story-title">[2025 #4] 블루그레인 추구미-근육량 30kg 공주들의 운동 Party</div>
@@ -137,7 +138,7 @@
         </div>
       </div>
       <div class="story-card">
-        <img src="../public/sportsstory8.jpg" alt="스포츠 스토리8">
+        <img src="../public/sports_story_8.jpg" alt="스포츠 스토리8">
         <div class="story-content">
           <div>
             <div class="story-title">[2024 #18] 나야, 잘만브라. 가을 뉴컬러 출시!</div>
@@ -148,5 +149,6 @@
       </div>
     </div>
   </main>
+  <script type="module" src="layout-loader.js"></script>
 </body>
 </html>

@@ -4,64 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>장바구니 - Bluegrain</title>
-  <link rel="stylesheet" href="style_B.css">
-  <style>
-    .cart-container {
-      background: #f8f9fb;
-      border-radius: 12px;
-      margin: 40px auto;
-      padding: 36px 24px;
-      max-width: 340px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      text-align: left;
-    }
-    .cart-title {
-      font-size: 1.3em;
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 18px;
-    }
-    .cart-input {
-      width: 100%;
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-      margin-bottom: 18px;
-      background: #fff;
-      color: #888;
-      box-sizing: border-box;
-    }
-    .cart-btn {
-      background: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px 0;
-      border-radius: 6px;
-      width: 100%;
-      font-size: 1em;
-      cursor: not-allowed;
-      opacity: 0.7;
-    }
-    .cart-close {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: none;
-      border: none;
-      font-size: 1.5em;
-      color: #333;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="cart-page.css">
 </head>
 <body>
-  <div style="display:flex; justify-content:center; align-items:center; min-height:100vh;">
-    <div class="cart-container" style="position:relative;">
-      <button class="cart-close" onclick="window.location.href='index_B.html'">&times;</button>
-      <div class="cart-title">장바구니</div>
-      <input type="text" class="cart-input" disabled placeholder="장바구니에 담긴 상품이 없습니다">
-      <button class="cart-btn" disabled>결제하기</button>
+  <div id="header-placeholder"></div>
+  <div class="cart-page-container">
+    <header class="cart-header">
+      <h1>장바구니</h1>
+    </header>
+    <main id="cartItemsContainer">
+      <!-- JavaScript에 의해 동적으로 채워질 영역 -->
+    </main>
+    <aside class="cart-summary">
+      <h2>결제 예상 금액</h2>
+      <div class="summary-row">
+        <span>상품 금액</span>
+        <span id="subtotalPrice">0원</span>
+      </div>
+      <div class="summary-row">
+        <span>배송비</span>
+        <span id="shippingFee">0원</span>
+      </div>
+      <hr>
+      <div class="summary-row total">
+        <span>총 결제 예상 금액</span>
+        <span id="totalPrice">0원</span>
+      </div>
+      <button id="checkoutBtn" class="checkout-btn" disabled>주문하기</button>
+    </aside>
+  </div>
+  <script type="module" src="layout-loader.js"></script>
+  <script type="module" src="cart-page.js"></script>
+</body>
+</html>
     </div>
   </div>
 </body>

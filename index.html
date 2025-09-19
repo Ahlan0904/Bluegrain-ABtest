@@ -6,11 +6,21 @@
     <title>Bluegrain A/B Test</title>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const randomNumber = Math.random();
-            if (randomNumber < 0.5) {
-                window.location.replace('index_A.html');
+            const assignedVariant = localStorage.getItem('ab_variant');
+
+            if (assignedVariant) {
+                // 이미 할당된 버전이 있으면 그곳으로 리디렉션
+                window.location.replace(assignedVariant === 'A' ? 'index_A.html' : 'index_B.html');
             } else {
-                window.location.replace('index_B.html');
+                // 할당된 버전이 없으면 새로 할당하고 localStorage에 저장
+                const randomNumber = Math.random();
+                if (randomNumber < 0.5) {
+                    localStorage.setItem('ab_variant', 'A');
+                    window.location.replace('index_A.html');
+                } else {
+                    localStorage.setItem('ab_variant', 'B');
+                    window.location.replace('index_B.html');
+                }
             }
         });
     </script>
@@ -19,4 +29,3 @@
     <p>A/B 테스트 페이지로 리디렉션 중입니다...</p>
 </body>
 </html>
-

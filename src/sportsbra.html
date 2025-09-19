@@ -4,68 +4,156 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>스포츠브라 상품목록 | 블루그레인</title>
-  <link rel="stylesheet" href="style_A.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="product-list.css">
 </head>
 <body>
-  <header style="text-align:center; padding:24px 0;">
-    <img src="../public/bluegrain_logo_20250724.png" alt="Bluegrain Logo" style="max-width:150px; height:auto;">
-    <h1 style="font-size:2em; font-weight:700; margin:18px 0 0 0; color:#222;">스포츠브라 상품목록</h1>
-    <p style="color:#555; margin-top:8px;">블루그레인의 다양한 스포츠브라 컬렉션을 만나보세요.</p>
-  </header>
-  <main style="max-width:1100px; margin:0 auto; padding:32px 0;">
-    <section style="display:flex; flex-wrap:wrap; gap:40px; justify-content:center;">
-      <div style="width:240px; text-align:center;">
-        <img src="../public/jalmanbra1+1.jpg" alt="맥시퀸 스포츠브라" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-        <div style="margin-top:10px; font-weight:500;">잘만브라 1+1+1</div>
-        <div style="color:#007bff; font-size:0.98em;">하이서포트</div>
-        <div style="font-size:1.08em; font-weight:700; margin-top:4px;">40% 69,000원</div>
+  <div class="container">
+    <header>
+        <div class="logo-wrapper">
+            <a href="../index.html"><img src="../public/bluegrain_logo_20250724.png" alt="Bluegrain Logo"></a>
+        </div>
+        <nav class="main-nav">
+          <div class="main-nav-links">
+            <a href="#" id="categoryBtn">카테고리</a>
+            <a href="#" id="shopNavBtn">SHOP</a>
+            <a href="story_A.html" id="storyBtn">스토리</a>
+            <a href="board.html" id="boardTab">게시판</a>
+          </div>
+          <div class="main-nav-actions">
+            <div class="login-wrapper">
+              <a href="#" class="login-btn">로그인</a>
+              <span class="coupon-bubble">1초 가입 4,000원</span>
+            </div>
+            <a href="#" id="mypageBtn">마이페이지</a>
+            <a href="/src/cart.html" class="cart-link">장바구니(0)</a>
+            <a href="#" id="searchBtn">SEARCH</a>
+          </div>
+        </nav>
+    </header>
+
+    <div id="mypageModal" class="modal-overlay" style="display:none; background:rgba(0,0,0,0.18); z-index:2000;">
+      <div class="modal-content" style="max-width:420px; width:95vw; padding:0 0 24px 0; margin:40px auto; align-items:normal;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee; padding:18px 24px 10px 24px;">
+          <span style="font-size:1.18em; font-weight:700;">마이페이지</span>
+          <button id="mypageClose" class="modal-close" style="position:static; font-size:1.5em;">&times;</button>
+        </div>
+        <div style="padding:18px 24px 0 24px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:18px;">
+            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
+              <div style="font-size:1em; color:#222; margin-bottom:6px;">쿠폰</div>
+              <div id="couponCount" style="font-size:1.15em; font-weight:700;">0개</div>
+            </div>
+            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
+              <div style="font-size:1em; color:#222; margin-bottom:6px;">적립금</div>
+              <div id="points" style="font-size:1.15em; font-weight:700;">0원</div>
+            </div>
+            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
+              <div style="font-size:1em; color:#222; margin-bottom:6px;">예치금</div>
+              <div id="deposit" style="font-size:1.15em; font-weight:700;">0원</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="width:240px; text-align:center;">
-        <img src="../public/jalmanbra1+1+1.jpg" alt="일체형 스포츠브라" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-        <div style="margin-top:10px; font-weight:500;">[일체형] 잘만브라 1+1+1</div>
-        <div style="color:#007bff; font-size:0.98em;">하이서포트</div>
-        <div style="font-size:1.08em; font-weight:700; margin-top:4px;">20% 79,000원</div>
+    </div>
+
+    <div id="categorySidebar" class="sidebar">
+      <button id="categoryClose" class="sidebar-close">&times;</button>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-main">SHOP</a>
+        <a href="story_A.html">스토리</a>
+        <a href="#">블루그레인</a>
+        <a href="board.html">게시판</a>
+        <a href="#">스포츠브라 왜 입어야해?</a>
+        <a href="#">스포츠브라 선택 가이드</a>
+        <a href="#">내 가슴사이즈는?</a>
+        <hr>
+        <a href="#" class="login-btn">로그인</a>
+        <a href="mypage.html">마이페이지</a>
+        <a href="#">강사회원신청게시판</a>
+        <a href="#">파트너센터 신청</a>
+        <hr>
+        <a href="#" class="icon-link">&#x1F517;</a>
+        <div class="sidebar-footer">© 블루그레인</div>
+      </nav>
+    </div>
+
+    <div id="searchModal" class="modal-overlay" style="display:none;">
+      <div class="modal-content">
+        <button id="searchClose" class="modal-close">&times;</button>
+        <h2 class="modal-title" style="align-self:flex-start;">검색</h2>
+        <input type="text" id="searchInput" class="modal-input" placeholder="검색어를 입력하세요">
+        <button id="searchSubmit" class="modal-submit">검색</button>
       </div>
-      <div style="width:240px; text-align:center;">
-        <img src="../public/bounce_X.jpg" alt="바운스 X" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-        <div style="margin-top:10px; font-weight:500;">바운스 X</div>
-        <div style="color:#007bff; font-size:0.98em;">컵 사이즈별 몰드</div>
-        <div style="font-size:1.08em; font-weight:700; margin-top:4px;">10% 45,000원</div>
+    </div>
+
+  <div class="product-page-title">
+    <h1>스포츠브라 상품목록</h1>
+    <p>블루그레인의 다양한 스포츠브라 컬렉션을 만나보세요.</p>
+  </div>
+  <main>
+    <section id="productGrid" class="product-grid">
+      <div class="product-card" data-id="P001" data-name="잘만브라 1+1+1" data-price="69000" data-image="../public/jalmanbra1+1.jpg">
+        <img src="../public/jalmanbra1+1.jpg" alt="맥시퀸 스포츠브라">
+        <div class="product-info">
+          <div class="product-name">잘만브라 1+1+1</div>
+          <div class="product-tag">하이서포트</div>
+          <div class="product-price">40% 69,000원</div>
+        </div>
+        <button class="add-to-cart-btn">장바구니 담기</button>
       </div>
-      <div style="width:240px; text-align:center;">
-        <img src="../public/PRO_ZIP.jpg" alt="PRO ZIP" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-        <div style="margin-top:10px; font-weight:500;">[일체형] PRO ZIP 1+1</div>
-        <div style="color:#007bff; font-size:0.98em;">하이서포트 앞지퍼</div>
-        <div style="font-size:1.08em; font-weight:700; margin-top:4px;">10% 79,000원</div>
+      <div class="product-card" data-id="P002" data-name="[일체형] 잘만브라 1+1+1" data-price="79000" data-image="../public/jalmanbra1+1+1.jpg">
+        <img src="../public/jalmanbra1+1+1.jpg" alt="일체형 스포츠브라">
+        <div class="product-info">
+          <div class="product-name">[일체형] 잘만브라 1+1+1</div>
+          <div class="product-tag">하이서포트</div>
+          <div class="product-price">20% 79,000원</div>
+        </div>
+        <button class="add-to-cart-btn">장바구니 담기</button>
       </div>
-      <div style="width:240px; text-align:center;">
-        <img src="../public/PRO1+1.jpg" alt="PRO ZIP" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-        <div style="margin-top:10px; font-weight:500;">[일체형] PRO 1+1</div>
-        <div style="color:#007bff; font-size:0.98em;">시원하고 가벼운 하이서포트</div>
-        <div style="font-size:1.08em; font-weight:700; margin-top:4px;">10% 69,000원</div>
+      <div class="product-card" data-id="P003" data-name="바운스 X" data-price="45000" data-image="../public/bounce_X.jpg">
+        <img src="../public/bounce_X.jpg" alt="바운스 X">
+        <div class="product-info">
+          <div class="product-name">바운스 X</div>
+          <div class="product-tag">컵 사이즈별 몰드</div>
+          <div class="product-price">10% 45,000원</div>
+        </div>
+        <button class="add-to-cart-btn">장바구니 담기</button>
+      </div>
+      <div class="product-card" data-id="P004" data-name="[일체형] PRO ZIP 1+1" data-price="79000" data-image="../public/PRO_ZIP.jpg">
+        <img src="../public/PRO_ZIP.jpg" alt="PRO ZIP">
+        <div class="product-info">
+          <div class="product-name">[일체형] PRO ZIP 1+1</div>
+          <div class="product-tag">하이서포트 앞지퍼</div>
+          <div class="product-price">10% 79,000원</div>
+        </div>
+        <button class="add-to-cart-btn">장바구니 담기</button>
+      </div>
+      <div class="product-card" data-id="P005" data-name="[일체형] PRO 1+1" data-price="69000" data-image="../public/PRO1+1.jpg">
+        <img src="../public/PRO1+1.jpg" alt="PRO 1+1">
+        <div class="product-info">
+          <div class="product-name">[일체형] PRO 1+1</div>
+          <div class="product-tag">시원하고 가벼운 하이서포트</div>
+          <div class="product-price">10% 69,000원</div>
+        </div>
+        <button class="add-to-cart-btn">장바구니 담기</button>
       </div> 
-        <div style="width:240px; text-align:center;">
-        <img src="../public/V_ZEN.jpg" alt="미디움 서포트" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-        <div style="margin-top:10px; font-weight:500;">[일체형]브이 젠 1+1</div>
-        <div style="color:#007bff; font-size:0.98em;">미디움서포트</div>
-        <div style="font-size:1.08em; font-weight:700; margin-top:4px;">20% 59,000원</div>
-      </div>
-        <div style="width:240px; text-align:center;">
-        <img src="../public/zalmanbra_ZIP.jpg" alt="하이 서포트" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-        <div style="margin-top:10px; font-weight:500;">[일체형]잘만브라 ZIP</div>
-        <div style="color:#007bff; font-size:0.98em;">하이 서포트</div>
-        <div style="font-size:1.08em; font-weight:700; margin-top:4px;">39,000원</div>
-      </div>
-        <div style="width:240px; text-align:center;">
-        <img src="../public/zalmanbra_RPP.jpg" alt="하이 서포트" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-        <div style="margin-top:10px; font-weight:500;">잘만브라 RPP</div>
-        <div style="color:#007bff; font-size:0.98em;">하이 서포트</div>
-        <div style="font-size:1.08em; font-weight:700; margin-top:4px;">29,000원</div>
+      <div class="product-card" data-id="P006" data-name="[일체형]브이 젠 1+1" data-price="59000" data-image="../public/V_ZEN.jpg">
+        <img src="../public/V_ZEN.jpg" alt="브이 젠">
+        <div class="product-info">
+          <div class="product-name">[일체형]브이 젠 1+1</div>
+          <div class="product-tag">미디움서포트</div>
+          <div class="product-price">20% 59,000원</div>
+        </div>
+        <button class="add-to-cart-btn">장바구니 담기</button>
       </div>
     </section>
   </main>
-  <footer style="text-align:center; color:#888; padding:24px 0; font-size:0.95em;">
+  <footer>
     © 블루그레인
   </footer>
+  </div>
+  <script type="module" src="common.js"></script>
+  <script type="module" src="product-list.js"></script>
 </body>
 </html>

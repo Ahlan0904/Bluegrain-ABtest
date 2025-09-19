@@ -4,24 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>공지사항 / 이벤트 | 블루그레인</title>
-  <link rel="stylesheet" href="src/style_B.css">
+  <link rel="stylesheet" href="common.css">
 </head>
 <body>
-  <header style="background:linear-gradient(90deg,#e3f0ff 0%,#f7f8fa 100%); box-shadow:0 2px 8px rgba(0,0,0,0.04); padding:0;">
-    <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
-      <div style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:22px 0 0 0;">
-        <img src="../public/bluegrain_logo_20250724.png" alt="Bluegrain Logo" style="max-width:120px; height:auto; margin-left:18px;">
-        <nav style="display:flex; gap:28px; margin-right:18px;">
-          <a href="../index_A.html" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;">홈</a>
-          <a href="apparel.html" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;">어패럴</a>
-          <a href="mens.html" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;">맨즈</a>
-          <a href="sale.html" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;">SALE</a>
-          <a href="etc.html" style="font-size:1.08em; color:#222; text-decoration:none; font-weight:500; transition:color 0.2s;">기타</a>
+  <div class="container">
+    <header>
+        <div class="logo-wrapper">
+            <a href="../index.html"><img src="../public/bluegrain_logo_20250724.png" alt="Bluegrain Logo"></a>
+        </div>
+        <nav class="main-nav">
+          <div class="main-nav-links">
+            <a href="#" id="categoryBtn">카테고리</a>
+            <a href="#" id="shopNavBtn">SHOP</a>
+            <a href="story_A.html" id="storyBtn">스토리</a>
+            <a href="board.html" id="boardTab">게시판</a>
+          </div>
+          <div class="main-nav-actions">
+            <div class="login-wrapper">
+              <a href="#" class="login-btn">로그인</a>
+              <span class="coupon-bubble">1초 가입 4,000원</span>
+            </div>
+            <a href="#" id="mypageBtn">마이페이지</a>
+            <a href="/src/cart.html" class="cart-link">장바구니(0)</a>
+            <a href="#" id="searchBtn">SEARCH</a>
+          </div>
         </nav>
+    </header>
+
+    <div id="mypageModal" class="modal-overlay" style="display:none; background:rgba(0,0,0,0.18); z-index:2000;">
+      <div class="modal-content" style="max-width:420px; width:95vw; padding:0 0 24px 0; margin:40px auto; align-items:normal;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee; padding:18px 24px 10px 24px;">
+          <span style="font-size:1.18em; font-weight:700;">마이페이지</span>
+          <button id="mypageClose" class="modal-close" style="position:static; font-size:1.5em;">&times;</button>
+        </div>
+        <div style="padding:18px 24px 0 24px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:18px;">
+            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
+              <div style="font-size:1em; color:#222; margin-bottom:6px;">쿠폰</div>
+              <div id="couponCount" style="font-size:1.15em; font-weight:700;">0개</div>
+            </div>
+            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
+              <div style="font-size:1em; color:#222; margin-bottom:6px;">적립금</div>
+              <div id="points" style="font-size:1.15em; font-weight:700;">0원</div>
+            </div>
+            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
+              <div style="font-size:1em; color:#222; margin-bottom:6px;">예치금</div>
+              <div id="deposit" style="font-size:1.15em; font-weight:700;">0원</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1 style="font-size:2.1em; font-weight:800; margin:24px 0 0 0; color:#1769ff; letter-spacing:0.5px; text-shadow:0 2px 8px rgba(23,105,255,0.08);">NOTICE / EVENT</h1>
     </div>
-  </header>
+
+    <div id="categorySidebar" class="sidebar">
+      <button id="categoryClose" class="sidebar-close">&times;</button>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-main">SHOP</a>
+        <a href="story_A.html">스토리</a>
+        <a href="#">블루그레인</a>
+        <a href="board.html">게시판</a>
+        <a href="#">스포츠브라 왜 입어야해?</a>
+        <a href="#">스포츠브라 선택 가이드</a>
+        <a href="#">내 가슴사이즈는?</a>
+        <hr>
+        <a href="#" class="login-btn">로그인</a>
+        <a href="mypage.html">마이페이지</a>
+        <a href="#">강사회원신청게시판</a>
+        <a href="#">파트너센터 신청</a>
+        <hr>
+        <a href="#" class="icon-link">&#x1F517;</a>
+        <div class="sidebar-footer">© 블루그레인</div>
+      </nav>
+    </div>
+
+    <div id="searchModal" class="modal-overlay" style="display:none;">
+      <div class="modal-content">
+        <button id="searchClose" class="modal-close">&times;</button>
+        <h2 class="modal-title" style="align-self:flex-start;">검색</h2>
+        <input type="text" id="searchInput" class="modal-input" placeholder="검색어를 입력하세요">
+        <button id="searchSubmit" class="modal-submit">검색</button>
+      </div>
+    </div>
+
+  <div class="product-page-title">
+    <h1 style="color:#1769ff;">NOTICE / EVENT</h1>
+  </div>
   <main style="max-width:700px; margin:0 auto; padding:32px 0;">
     <section style="background:#fff; border-radius:16px; box-shadow:0 4px 24px rgba(23,105,255,0.07); padding:0; overflow:hidden;">
       <div style="border-bottom:1px solid #e3eaf5; padding:28px 32px 18px 32px;">
@@ -83,5 +150,7 @@
   <footer style="text-align:center; color:#888; padding:24px 0; font-size:0.95em;">
     © 블루그레인
   </footer>
+  </div>
+  <script type="module" src="common.js"></script>
 </body>
 </html>
