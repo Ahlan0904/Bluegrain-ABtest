@@ -26,7 +26,7 @@
                   <a href="#" class="login-btn">로그인</a>
                   <span class="coupon-bubble">1초 가입 4,000원</span>
                 </div>
-                <a href="#" id="mypageBtn">마이페이지</a>
+                <a href="/src/mypage.html">마이페이지</a>
                 <a href="/src/cart.html" class="cart-link">장바구니(0)</a>
                 <a href="#" id="searchBtn">SEARCH</a>
               </div>
@@ -81,56 +81,6 @@
                 <a href="src/dashboard.html" style="color: #007bff; text-decoration: none;">결과 대시보드 보기</a>
             </div>
         </footer>
-
-    <!-- 마이페이지 모달 -->
-    <div id="mypageModal" class="modal-overlay" style="display:none; background:rgba(0,0,0,0.18); z-index:2000;">
-      <div class="modal-content" style="max-width:420px; width:95vw; padding:0 0 24px 0; margin:40px auto; align-items:normal;">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee; padding:18px 24px 10px 24px;">
-          <span style="font-size:1.18em; font-weight:700;">마이페이지</span>
-          <button id="mypageClose" class="modal-close" style="position:static; font-size:1.5em;">&times;</button>
-        </div>
-        <div style="padding:18px 24px 0 24px;">
-          <div style="display:flex; justify-content:space-between; margin-bottom:18px;">
-            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
-              <div style="font-size:1em; color:#222; margin-bottom:6px;">쿠폰</div>
-              <div id="couponCount" style="font-size:1.15em; font-weight:700;">0개</div>
-            </div>
-            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
-              <div style="font-size:1em; color:#222; margin-bottom:6px;">적립금</div>
-              <div id="points" style="font-size:1.15em; font-weight:700;">0원</div>
-            </div>
-            <div style="flex:1; text-align:center; background:#f7f8fa; border-radius:8px; margin:0 4px; padding:16px 0;">
-              <div style="font-size:1em; color:#222; margin-bottom:6px;">예치금</div>
-              <div id="deposit" style="font-size:1.15em; font-weight:700;">0원</div>
-            </div>
-          </div>
-          <div style="text-align:center; color:#007bff; font-size:1em; margin-bottom:18px; cursor:pointer;">블루그레인 멤버십 혜택 &gt;</div>
-          <div style="background:#f7f8fa; border-radius:8px; padding:18px; margin-bottom:18px;">
-            <div style="text-align:left; font-size:1em; font-weight:600; margin-bottom:10px;">나의 주문처리 현황 <span style="font-size:0.95em; color:#888;">(최근 3개월 기준)</span></div>
-            <div style="display:flex; justify-content:space-between;">
-              <div style="text-align:center; flex:1;"><div id="orderStep1" style="font-size:1.3em; font-weight:700; margin-bottom:4px;">0</div><div style="font-size:0.98em; color:#222;">입금전</div></div>
-              <div style="text-align:center; flex:1;"><div id="orderStep2" style="font-size:1.3em; font-weight:700; margin-bottom:4px;">0</div><div style="font-size:0.98em; color:#222;">배송준비중</div></div>
-              <div style="text-align:center; flex:1;"><div id="orderStep3" style="font-size:1.3em; font-weight:700; margin-bottom:4px;">0</div><div style="font-size:0.98em; color:#222;">배송중</div></div>
-              <div style="text-align:center; flex:1;"><div id="orderStep4" style="font-size:1.3em; font-weight:700; margin-bottom:4px;">0</div><div style="font-size:0.98em; color:#222;">배송완료</div></div>
-            </div>
-          </div>
-          <div style="background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:18px; margin-bottom:18px;">
-            <div style="font-weight:700; margin-bottom:10px;">나의 쇼핑 활동</div>
-            <ul style="list-style:none; padding:0; margin:0;">
-              <li style="padding:10px 0; border-bottom:1px solid #eee; font-size:1em; cursor:pointer;">주문/배송조회 &gt;</li>
-              <li style="padding:10px 0; border-bottom:1px solid #eee; font-size:1em; cursor:pointer;">적립금 &gt;</li>
-              <li style="padding:10px 0; border-bottom:1px solid #eee; font-size:1em; cursor:pointer;">쿠폰 &gt;</li>
-              <li style="padding:10px 0; border-bottom:1px solid #eee; font-size:1em; cursor:pointer;">내가 쓴 게시글 &gt;</li>
-              <li style="padding:10px 0; font-size:1em; cursor:pointer;">위시리스트 &gt;</li>
-            </ul>
-          </div>
-          <div style="background:#007bff; color:#fff; border-radius:8px; padding:18px; text-align:center; font-size:1em;">
-            <span>리뷰 작성하고 최대 5천 원 받아가세요!</span>
-            <div style="font-size:0.95em; margin-top:6px;">텍스트 리뷰: 1,000원<br>일반 포토 리뷰: 2,000원<br>착용 포토 리뷰: 5,000원</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div id="categorySidebar" class="sidebar">
       <button id="categoryClose" class="sidebar-close">&times;</button>

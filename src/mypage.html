@@ -3,29 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이페이지</title>
-    <link rel="stylesheet" href="style_A.css">
-    <script type="module" src="mypage.js" defer></script>
+    <title>마이페이지 | 블루그레인</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="mypage.css">
 </head>
 <body>
-    <div class="mypage-container">
-      <div class="profile-card">
-        <div id="userProfile"></div>
-      </div>
-      <div class="info-cards">
-        <div class="card">
-          <h2>구매내역</h2>
-          <ul id="purchaseList"><li>구매내역이 없습니다.</li></ul>
+  <div class="container">
+    <header>
+        <div class="logo-wrapper">
+            <a href="../index.html"><img src="../public/bluegrain_logo_20250724.png" alt="Bluegrain Logo"></a>
         </div>
-        <div class="card">
-          <h2>쿠폰</h2>
-          <ul id="couponList"><li>쿠폰이 없습니다.</li></ul>
-        </div>
-        <div class="card">
-          <h2>적립금</h2>
-          <div id="points">0원</div>
-        </div>
+        <nav class="main-nav">
+          <div class="main-nav-links">
+            <a href="#" id="categoryBtn">카테고리</a>
+            <a href="#" id="shopNavBtn">SHOP</a>
+            <a href="story_A.html" id="storyBtn">스토리</a>
+            <a href="board.html" id="boardTab">게시판</a>
+          </div>
+          <div class="main-nav-actions">
+            <div class="login-wrapper">
+              <a href="#" class="login-btn">로그인</a>
+              <span class="coupon-bubble">1초 가입 4,000원</span>
+            </div>
+            <a href="#" id="mypageBtn">마이페이지</a>
+            <a href="/src/cart.html" class="cart-link">장바구니(0)</a>
+            <a href="#" id="searchBtn">SEARCH</a>
+          </div>
+        </nav>
+    </header>
+
+    <div id="categorySidebar" class="sidebar">
+      <button id="categoryClose" class="sidebar-close">&times;</button>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-main">SHOP</a>
+        <a href="story_A.html">스토리</a>
+        <a href="#">블루그레인</a>
+        <a href="board.html">게시판</a>
+        <a href="#">스포츠브라 왜 입어야해?</a>
+        <a href="#">스포츠브라 선택 가이드</a>
+        <a href="#">내 가슴사이즈는?</a>
+        <hr>
+        <a href="#" class="login-btn">로그인</a>
+        <a href="/src/mypage.html">마이페이지</a>
+        <a href="#">강사회원신청게시판</a>
+        <a href="#">파트너센터 신청</a>
+        <hr>
+        <a href="#" class="icon-link">&#x1F517;</a>
+        <div class="sidebar-footer">© 블루그레인</div>
+      </nav>
+    </div>
+
+    <div id="searchModal" class="modal-overlay" style="display:none;">
+      <div class="modal-content">
+        <button id="searchClose" class="modal-close">&times;</button>
+        <h2 class="modal-title" style="align-self:flex-start;">검색</h2>
+        <input type="text" id="searchInput" class="modal-input" placeholder="검색어를 입력하세요">
+        <button id="searchSubmit" class="modal-submit">검색</button>
       </div>
     </div>
+
+    <div class="mypage-container">
+        <div class="profile-card">
+            <div id="userProfile">
+                <p>사용자 정보를 불러오는 중입니다...</p>
+            </div>
+        </div>
+        <div class="info-cards">
+            <div class="card">
+            <h2>구매내역</h2>
+            <ul id="purchaseList"><li>구매내역이 없습니다.</li></ul>
+            </div>
+            <div class="card">
+            <h2>쿠폰</h2>
+            <ul id="couponList"><li>사용 가능한 쿠폰이 없습니다.</li></ul>
+            </div>
+            <div class="card">
+            <h2>적립금</h2>
+            <div id="points">0원</div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script type="module" src="common.js"></script>
+  <script type="module" src="mypage.js"></script>
 </body>
 </html>
